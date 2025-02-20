@@ -62,10 +62,12 @@ io.on('connection', (socket) => {
     io.emit('receiveMessage', message);
   });
 
+  // Manejar desconexiones
   socket.on('disconnect', (reason) => {
     console.log(`Cliente desconectado: ${reason}`);
   });
 
+  // Manejar errores
   socket.on('error', (error) => {
     console.error(`Error en el socket: ${error}`);
   });
